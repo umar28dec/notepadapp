@@ -4,7 +4,7 @@
   "description": "Simple Notepad application",
   "main": "app.js",
   "scripts": {
-    "test": "None"
+   "start": "node app.js"
   },
   "repository": {
     "type": "git",
