@@ -1,0 +1,45 @@
+
+<div id="fsModal"
+     class="modal animated bounceIn"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 id="myModalLabel"
+                    class="modal-title"> Open File
+                    <input type="text" style="width: 85%" ng-model="test" placeholder="Search filter">
+                    <button class="btn-danger"
+                            data-dismiss="modal" style="float: right;">
+                        X
+                    </button>
+                </h1>
+
+            </div>
+
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-3"  ng-repeat="(key,files) in openlist | filter:test">
+                                <a ng-click="getFile(files,tempKey)">
+                                    {{key +1}}) {{files}} &nbsp;&nbsp;
+                                </a><a ng-click="removeFile(files,key)" href="javascript:void(0)"><span class="glyphicon glyphicon-remove alert-danger"></span></a>
+                            </div></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn-danger"
+                        data-dismiss="modal">
+                    close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

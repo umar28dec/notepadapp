@@ -1,0 +1,27 @@
+{
+  "name": "notepad",
+  "version": "1.0.0",
+  "description": "Simple Notepad application",
+  "main": "app.js",
+  "scripts": {
+    "test": "None"
+  },
+  "repository": {
+    "type": "git",
+    "url": "None"
+  },
+  "keywords": [
+    "None"
+  ],
+  "author": "Umar farooque khan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "express-session": "^1.15.5",
+    "fs": "0.0.1-security",
+    "mongodb": "^2.2.30",
+    "url": "^0.11.0"
+  }
+}

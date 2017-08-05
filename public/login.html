@@ -1,0 +1,26 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/user.css">
+  <script src="/js/angular.min.js"></script>
+    </head>
+    <body ng-app="login">
+        <div class="wrapper" ng-controller="loginctr">
+    <form class="form-signin">       
+      <h2 class="form-signin-heading">Please login</h2>
+      <input type="text" class="form-control" ng-model="data.email" name="username" placeholder="Email Address" required="" autofocus="" />
+      <input type="password" class="form-control" ng-model="data.password" name="password" placeholder="Password" required=""/>      
+      <label class="checkbox">
+        <input type="checkbox" value="remember-me"  id="rememberMe" name="rememberMe"> Remember me
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" ng-click="save()"  type="button">Login</button>   
+    </form>
+  </div>
+                <script src="controller/login.js"></script>
+
+    </body>
+</html>

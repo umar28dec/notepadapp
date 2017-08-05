@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Notepad App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="public/css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/css/main.css">
+  <script src="public/js/jquery.min.js"></script>
+  <script src="public/js/bootstrap.min.js"></script>
+  <script src="public/js/angular.min.js"></script>
+</head>
+<body ng-app="myNoteApp">
+    <div class="container" ng-controller="myNoteCtrl">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+       
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    File<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="javascript:void(0)" ng-click="new ()">New</a></li>
+                  <li><a href="#">Open</a></li>
+                  <li><a href="javascript:void(0)" ng-click="clear(tempKey)">Clear</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#" ng-click="save(tempKey)">Save</a></li>
+                  <li><a href="#">Save AS</a></li>
+                  <li role="separator" class="divider">Recent</li>
+                  <li class="dropdown-header"></li>
+                  <li><a href="#">File 1</a></li>
+                  <li><a href="#">File 2</a></li>
+                 
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header"></li>
+                  <li><a href="#">Close</a></li>
+                  <li><a href="#">Quit</a></li>
+                </ul>
+              </li>
+              
+               <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    View<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="javascript:void(0)" ng-click="countWords(tempKey)" >Word Count</a></li>
+                  <li><a href="javascript:void(0)" ng-click="countLetter(tempKey)">Letter Count</a></li>
+                  <li><a href="javascript:void(0)" ng-click="countLine(tempKey)">line Count</a></li>
+              
+                </ul>
+              </li>
+              
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Document<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Save All </a></li>
+                  <li><a href="#">Close All</a></li>
+                  <li><a href="#">line</a></li>
+              
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Help<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Contents</a></li>
+                  <li><a href="#">About</a></li>              
+                </ul>
+              </li>
+            </ul>               
+          </div>
+        </div>
+      </nav>
+
+  <ul class="nav1_tab_col" > 
+      
+     <li ng-repeat="note in dataArray track by $index">
+          <div class="nav1_tab">  
+   <a   data-toggle="tab" class="{{note.tileClass}}" ng-click="changeTitle($index)" href="#uk_{{$index}}">
+<span ng-hide="note.editing" ng-click="note.editing = true">{{note.title}}&nbsp; {{$index + 1}}</span>  </a> 
+                    <input ng-show="note.editing" type="text" ng-mouseleave="saveTitle($index)" ng-model="note.title">
+      
+<span   ng-click="close($index)">x</span>
+        </div>
+      </li>
+  </ul>
+
+  <div class="tab-content tab1_content">    
+     <div id="uk_{{$index}}" class="tab-pane fade in" ng-repeat="note in dataArray track by $index">
+         <textarea id="khan_{{$index}}" cols="138%" rows="100%" ng-change="change($index)" ng-model="note.data"></textarea>       
+    </div>
+  </div >
+</div>
+<script src="controller/myNoteApp.js"></script>
+<script src="controller/myNoteCtrl.js"></script>
+<script src="public/js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+  
+

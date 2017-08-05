@@ -1,0 +1,236 @@
+.nav1_tab_col, .nav1_tab_col .nav1_tab { width:100%; float:left; clear: both;list-style-type:none;}        
+.nav1_tab_col{ border-bottom:solid 1px #ddd; }
+.nav1_tab_col li  {float:left;position: relative;display: block;padding: 10px 15px;z-index: 33;top: 1px;}
+.nav1_tab_col li.active{ border-top:solid 1px #ddd; border-left:solid 1px #ddd; border-right:solid 1px #ddd;  border-radius: 5px  5px 0 0; background:#FFF;}
+.nav1_tab a, .nav1_tab span {float:left; display:block;}
+.nav1_tab span { padding:0 15px; text-align: center; cursor:pointer; }
+
+.bold{
+    font-weight: bold;
+}
+
+.normal{
+    font-weight: 100;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400);
+
+.font-roboto {
+  font-family: 'roboto condensed';
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  .font-roboto();
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.modal-dialog {
+  position: fixed;
+  width: 90%;
+  height: 90%;
+  padding: 0;
+  margin: 5%;
+}
+
+.modal-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 2px solid #3c7dcf;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.modal-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  padding: 10px;
+  background: #6598d9;
+  border: 0;
+}
+
+.modal-title {
+  font-weight: 300;
+  font-size: 2em;
+  color: #fff;
+  line-height: 30px;
+}
+
+.modal-body {
+  position: absolute;
+  top: 50px;
+  bottom: 60px;
+  width: 100%;
+  font-weight: 300;
+  overflow: auto;
+}
+
+.modal-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  padding: 10px;
+  background: #f1f3f5;
+}
+
+.btn {
+  height: 40px;
+  border-radius: 0;
+};
+
+
+  &:focus,
+  &:active,
+  &:active:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+
+.btn-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -20px;
+  margin-left: -100px;
+  width: 200px;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  font-weight: 300;
+  font-size: 1.6rem;
+  color: #fff;
+  color: lighten(#484b5b, 20%);
+  color: #fff;
+  text-align: center;
+  background: #60cc69;
+  border: 1px solid #36a940;
+  border-bottom: 3px solid #36a940;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+
+
+  &:active {
+    border-bottom: 1px solid #36a940;
+  }
+}
+
+.btn-default,
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active {
+  font-weight: 300;
+  font-size: 1.6rem;
+  color: #fff;
+  text-align: center;
+  background: darken(#dcdfe4, 10%);
+  border: 1px solid darken(#dcdfe4, 20%);
+  border-bottom: 3px solid darken(#dcdfe4, 20%);
+
+  &:active {
+    border-bottom: 1px solid darken(#dcdfe4, 20%);
+  }
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+  color: #cc7272;
+  background: transparent;
+  border: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: #60cc69;
+  line-height: 1.5;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+p {
+  font-size: 1.4em;
+  line-height: 1.5;
+  color: lighten(#5f6377, 20%);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+  background: #f1f3f5;
+  border-left: 1px solid darken(#f1f3f5, 10%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: darken(#f1f3f5, 20%);
+}
+
+.openbtn{
+    clear: both;
+    color: #333;
+    display: block;
+    font-weight: 400;
+    line-height: 1.42857;
+    padding: 3px 20px;
+    white-space: nowrap;
+    background-color: transparent;
+     box-sizing: border-box;
+     border: 0;
+}
+input{
+    color: black !important;
+}
+
+.taskbar{
+    height: 25px;
+    width: 100%;
+    background: gray;
+    color: white;
+    border-radius: 2px;
+    padding-bottom: 5px;
+    padding-top: 3px;
+}
+.right1{
+    float: right;
+    margin-right: 10px;
+}
+
+
+.centered-form{
+	margin-top: 60px;
+}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Notepad App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/angular-route.min.js"></script>
+</head>
+<body ng-app="myNoteApp">
+    <div class="container" ng-controller="myNoteCtrl">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+       
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    File<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="javascript:void(0)" ng-click="new (tempKey)">New</a></li>
+                  <li><button class="openbtn" ng-click="openFile(tempKey)" data-toggle="modal" data-target="#fsModal">
+open</button></li>
+                  <li><a href="javascript:void(0)" ng-click="clear(tempKey)">Clear</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="javascript:void(0)" ng-click="save(tempKey)">Save</a></li>
+                  <li><a href="javascript:void(0)" ng-click="saveAs(tempKey)">Save AS</a></li>
+                  <li role="separator" class="divider">Recent</li>
+                  <li class="dropdown-header" data-ng-init="init()">Recent File</li>
+                  <li><a href="#">File 1</a></li>
+                  <li><a href="#">File 2</a></li>
+                 
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header"></li>
+                  <li><a href="javascript:void(0)" ng-click="close(tempKey)" >Close</a></li>
+                  <li><a href="javascript:void(0)" ng-click="closeTab(tempKey)">Quit</a></li>
+                </ul>
+              </li>
+              
+               <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    View<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="javascript:void(0)" ng-click="countWords(tempKey,1)" >Word Count</a></li>
+                  <li><a href="javascript:void(0)" ng-click="countLetter(tempKey)">Letter Count</a></li>
+                  <li><a href="javascript:void(0)" ng-click="countLine(tempKey)">line Count</a></li>
+                   <li role="separator" class="divider"></li>
+                   <li><a href="javascript:void(0)" ng-click="getLineNumber(tempKey)">Get Line No</a></li>
+              
+                </ul>
+              </li>
+              
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Document<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Save All </a></li>
+                  <li><a href="javascript:void(0)" ng-click="closeAll()">Close All</a></li>
+                  <li><a href="#">line</a></li>
+              
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Help<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Contents</a></li>
+                  <li><a href="#">About</a></li>              
+                </ul>
+              </li>
+            </ul>               
+          </div>
+        </div>
+      </nav>
+
+  <ul class="nav1_tab_col" > 
+     <li ng-repeat="note in dataArray track by $index">
+          <div class="nav1_tab">  
+              <a data-toggle="tab" class="{{note.tileClass}}"   ng-click="changeTitle($index)" href="#uk_{{$index}}">
+       <span ng-hide="note.editing" ng-click="getIndex($index)" ng-dblclick="note.editing = true">{{note.title}}</span>  </a> 
+                    <input  ng-show="note.editing" type="text" ng-blur="saveTitle($index)" ng-model="note.title">
+      
+                    <span ng-show="$index" ng-click="close($index)">x</span>
+        </div>
+      </li>
+  </ul>
+<div ng-include = "'pages/open.html'"></div>
+  <div class="tab-content tab1_content">    
+     <div id="uk_{{$index}}" class="tab-pane fade in" ng-repeat="note in dataArray track by $index">
+         <textarea  class="kkk" id="khan_{{$index}}" ng-keyup="lineCountOnKeyUp($index)" name="textarea1" cols="138%" rows="10%" ng-focus="change($index);" ng-model="note.data" ></textarea>       
+         <div class="pull-right" ng-show="note.saveas"><button ng-click="saveAsFile($index)">Save As</button></div>
+     </div>
+      <div class="taskbar"><span  id="word" class="right1">Total Letter {{totalLetterCount}}</span><span  id="word" class="right1">Total Word {{totalWorldCount}}</span><span  id="letter" class="right1">Total Line: {{totalline}}</span><span  id="log" class="right1"></span></div>
+  </div >
+</div>
+   
+<script src="controller/myNoteApp.js"></script>
+<script src="controller/myNoteCtrl.js"></script>
+<script src="controller/route.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+  
+
